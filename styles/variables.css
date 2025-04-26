@@ -1,1 +1,29 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+  --font-family: 'Inter-Variable', sans-serif;
+  --second-family: 'Press Start 2P', sans-serif;
+  --text-color: #000;
+  --main-font-weight: 400;
+  --title-font-weight: 700;
+  --subtitle-font-weight: 700;
+  --content-width: clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem);
+  --logo-font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  --header-font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  --header-padding: clamp(7.5rem, 7.3239rem + 0.7512vw, 8rem);
+  --main-font-size: 18px;
+  --button-font-size: 14px;
+  --label-font-size: 14px;
+  --button-line-height: 90%;
+  --bg-color-block: #fff;
+  --border-block: 2px solid currentColor;
+  --stroke-color: #fff;
+  --deference-color: #fff;
+  --contour-color: black;
+  --animation-fill-color: red;
+}
+
+@media (width <= 375px) {
+  :root {
+    --content-width: 100%;
+  }
+}
