@@ -182,7 +182,7 @@
   font-family: var(--second-family);
   font-size: var(--button-font-size);
   line-height: var(--button-line-height);
-  background: transparent;
+  background: var(--bg-color-block);
 }
 
 .button:hover {
