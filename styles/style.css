@@ -9,36 +9,26 @@
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 
 */
-@font-face {
-  font-family: Inter-Variable;
-  src:
-    local('Inter-Variable'),
-    url(../fonts/Inter-Variable.woff2) format('woff2 supports variations'),
-    url(../fonts/Inter-Variable.woff2) format('woff2-variations');
-    font-weight: 400 700;
-    font-display: swap;
-}
-
 .page {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-inline-size: 320px;
-  min-block-size: 100dvb;
   font-family: var(--font-family);
   font-size: var(--main-font-size);
-  font-variation-settings: 'wght' var(--main-font-weight);
   background-image: 
   repeating-linear-gradient(to right, #d3d3d3,#d3d3d3 2px, transparent 2px,transparent 4px),
   repeating-linear-gradient(to bottom, #d3d3d3,#d3d3d3 2px, transparent 2px,transparent 4px),
   linear-gradient(to bottom, #e7e7e7 0%, #e7e7e7 0.1%, #1a1a1a 100%);
   background-size: cover;
+  min-inline-size: 320px;
+  min-block-size: 100dvb;
+  font-variation-settings: 'wght' var(--main-font-weight);
 }
 
 .decoration {
+  background: var(--bg-color-block);
   inline-size: var(--content-width);
   block-size: 100%;
-  background: var(--bg-color-block);
 }
 
 .header {
@@ -46,24 +36,24 @@
   flex-direction: column;
   align-items: center;
   gap: 20px;
+  margin-block-start: 100px;
+  margin-block-end: 100px;
+  border: var(--border-block);
+  padding-block-start: var(--header-padding);
+  padding-block-end: var(--header-padding);
   font-family: var(--second-family);
   font-weight: var(--main-font-weight);
   text-transform: uppercase;
-  border: var(--border-block);
-  margin-block-start: 100px;
-  margin-block-end: 100px;
-  padding-block-start: var(--header-padding);
-  padding-block-end: var(--header-padding);
 }
 
 .header__logo {
-  font-size: var(--logo-font-size);
   font-weight: inherit;
+  font-size: var(--logo-font-size);
 }
 
 .header__title {
-  font-size: var(--header-font-size);
   font-weight: inherit;
+  font-size: var(--header-font-size);
 }
 
 .stories {
@@ -85,11 +75,11 @@
 }
 
 .card__title {
-  font-variation-settings: 'wght' var(--subtitle-font-weight);
-  font-size: inherit;
+  padding-inline: 10px;
   padding-block-start: 4px;
   padding-block-end: 6px;
-  padding-inline: 10px;
+  font-size: inherit;
+  font-variation-settings: 'wght' var(--subtitle-font-weight);
 }
 
 .card__picture {
@@ -98,9 +88,9 @@
 
 .card__picture-image {
   width: 100%;
-  aspect-ratio: 1 / 1;
   object-fit: cover;
   object-position: center;
+  aspect-ratio: 1 / 1;
 }
 
 .image_brightness {
@@ -133,25 +123,25 @@
 
 .card__picture-label {
   position: absolute;
-  font-family: var(--second-family);
-  font-size: var(--label-font-size);
-  font-weight: var(--main-font-weight);
-  inset-inline-end: 25px;
-  inset-block-start: 25px;
-  mix-blend-mode: hard-light;
   opacity: 0.5;
+  font-family: var(--second-family);
+  font-weight: var(--main-font-weight);
+  font-size: var(--label-font-size);
   text-shadow:
   -1px 0 var(--stroke-color), 
   0 1px var(--stroke-color), 
   1px 0 var(--stroke-color), 
   0 -1px var(--stroke-color);
+  inset-inline-end: 25px;
+  inset-block-start: 25px;
+  mix-blend-mode: hard-light;
 }
 
 @supports ((text-stroke: 1px var(--stroke-color)) or (-webkit-text-stroke: 1px var(--stroke-color))) {
   .card__picture-label {
+    text-shadow: none;
     -webkit-text-stroke: 1px var(--stroke-color);
     text-stroke: 1px var(--stroke-color);
-    text-shadow: none;
   }
 }
 
@@ -186,13 +176,13 @@
 
 .button {
   position: relative;
+  border: var(--border-block);
+  overflow: hidden;
+  color: var(--text-color);
   font-family: var(--second-family);
   font-size: var(--button-font-size);
   line-height: var(--button-line-height);
-  color: var(--text-color);
-  border: var(--border-block);
   background: transparent;
-  overflow: hidden;
 }
 
 .button:hover {
@@ -204,12 +194,12 @@
   position: absolute;
   inset: 0;
   background-color: #000;
-  transform: translate(-100%);
   transition: transform 0.5s ease-in-out;
+  transform: translate(-100%);
 }
 
 .button:hover::before {
-  transform: translate(0);  
+  transform: translate(0);
 }
 
 .button:focus {
@@ -217,19 +207,17 @@
 }
 
 .button:focus-visible {
-  outline: none;
   box-shadow: 2px 2px 0 currentColor;
+  outline: none;
   transition: box-shadow 0.3s ease;
 }
 
 .card__icon-button {
-  background: transparent;
   height: 34px;
   border: none;
-  /*padding-block: 2.5px;
-  padding-inline: 0;*/
   padding: 0;
   outline: 2px solid transparent;
+  background: transparent;
   transition: outline-color 0.3s ease;
 }
 
@@ -333,21 +321,21 @@
 
 .button__text {
   position: relative;
-  mix-blend-mode: difference;
   z-index: 1;
   color: var(--deference-color);
+  mix-blend-mode: difference;
 }
 
 .save-button {
   display: flex;
+  align-items: center;
   gap: 8px;
   align-self: center;
-  align-items: center;
   margin-block-end: 100px;
-  inline-size: clamp(19.125rem, 18.4868rem + 2.723vw, 20.9375rem);
-  padding-block: 16px;
   padding-inline-start: 19px;
   padding-inline-end: 17px;
+  padding-block: 16px;
+  inline-size: clamp(19.125rem, 18.4868rem + 2.723vw, 20.9375rem);
 }
 
 .floppy-icon {
@@ -364,11 +352,11 @@
   flex-direction: column;
   gap: 30px;
   border: 2px solid #000;
+  padding-inline: 30px;
+  padding-block: 30px;
   min-inline-size: 341px;
   max-inline-size: 353px;
   inline-size: clamp(21.3125rem, 21.0484rem + 1.1268vw, 22.0625rem);
-  padding-inline: 30px;
-  padding-block: 30px;
 }
 
 dialog::backdrop {
@@ -382,24 +370,24 @@ dialog::backdrop {
 }
 
 .modal-floppy__icon {
+  flex-shrink: 0;
   width: 39px;
   height: 39px;
-  flex-shrink: 0;
 }
 
 .modal-floppy__text {
-  font-family: var(--second-family);
-  font-size: var(--button-font-size);
-  font-weight: var(--main-font-weight);
   color: currentColor;
+  font-family: var(--second-family);
+  font-weight: var(--main-font-weight);
+  font-size: var(--button-font-size);
   line-height: 150%;
   text-transform: uppercase;
 }
 
 .modal__close-button {
-  inline-size: 100%;
-  text-transform: uppercase;
   padding-block: 12.5px;
+  text-transform: uppercase;
+  inline-size: 100%;
 }
 
 @media (width <= 375px) {
