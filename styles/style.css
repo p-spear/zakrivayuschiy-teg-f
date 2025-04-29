@@ -257,7 +257,6 @@
   padding-inline-start: 19px;
   padding-inline-end: 17px;
   padding-block: 16px;
-  inline-size: clamp(19.125rem, 18.4868rem + 2.723vw, 20.9375rem);
 }
 
 .floppy-icon {
